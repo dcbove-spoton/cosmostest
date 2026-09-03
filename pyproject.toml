@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cosmostest"
+version = "0.1.0"
+description = "A cosmostest Python project template with modern tooling"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Your Name" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+
+[project.scripts]
+cosmostest = "cosmostest.main:main"
+
+[tool.black]
+line-length = 119
+target-version = ['py312']
+
+[tool.ruff]
+line-length = 119
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["B", "D", "E", "F", "I", "PLC0415", "UP"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: tests that require external services or long runtimes",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.11.0",
+    "mypy>=1.18.2",
+    "pytest>=9.0.0",
+    "ruff>=0.14.4",
+]

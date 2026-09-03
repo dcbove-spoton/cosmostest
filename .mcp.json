@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mcpteam": {
+      "command": "uv",
+      "args": ["--directory", "/Users/dcbove/workspace/mcpteam", "run", "mcpteam"],
+      "env": {
+        "MCPTEAM_STORE": "dynamodb",
+        "MCPTEAM_DYNAMODB_TABLE": "mcpteam-dev",
+        "AWS_REGION": "us-east-1",
+        "AWS_PROFILE": "default"
+      }
+    }
+  }
+}

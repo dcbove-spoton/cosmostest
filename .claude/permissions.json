@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "shell": {
+    "default_policy": "deny",
+    "allow": [
+      "git log *",
+      "git show *",
+      "git diff *",
+      "git blame *",
+      "git reflog *",
+      "git shortlog *",
+      "git ls-files *",
+      "git ls-tree *",
+      "git cat-file *",
+      "git rev-parse *",
+      "git name-rev *",
+      "git describe *",
+      "git status",
+      "git branch --list*",
+      "git tag --list*",
+      "git remote -v",
+      "git config --list",
+      "git grep *"
+    ],
+    "deny": [
+      "git commit*",
+      "git add*",
+      "git rm*",
+      "git mv*",
+      "git reset*",
+      "git rebase*",
+      "git merge*",
+      "git checkout*",
+      "git switch*",
+      "git restore*",
+      "git stash*",
+      "git push*",
+      "git fetch*",
+      "git pull*",
+      "git submodule*",
+      "git worktree*",
+      "git clean*",
+      "git config --global*"
+    ]
+  }
+}
