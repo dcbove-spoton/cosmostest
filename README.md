@@ -9,11 +9,12 @@ Minimal Python project template with modern tooling: UV, Black, Ruff, Mypy, Pyte
 3. Rename `src/cosmostest/` to `src/<yourapp>/` and update `pyproject.toml` (`name` and `[project.scripts]`)
 4. `make install`
 5. `make run`
-6. Open `http://localhost:8000/foo` to receive `"bar"`
+6. Run `curl --user test:test http://localhost:8000/foo` to receive `"bar"`
 
 ## API
 
-`make run` starts the FastAPI server at `http://localhost:8000`.
+`make run` starts the FastAPI server at `http://localhost:8000`. All API requests require HTTP Basic authentication
+using the temporary development credentials `test:test`.
 
 | Method | Path | Response |
 | --- | --- | --- |
