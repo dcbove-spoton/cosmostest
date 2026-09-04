@@ -22,8 +22,16 @@ def test_get_foo_requires_credentials() -> None:
     assert response.headers["www-authenticate"] == "Basic"
 
 
-def test_get_foo_rejects_incorrect_credentials() -> None:
-    """GET /foo rejects incorrect credentials."""
+def test_get_foo_rejects_incorrect_username() -> None:
+    """GET /foo rejects an incorrect username."""
+    response = asyncio.run(_get_foo(httpx.BasicAuth("incorrect", "test")))
+
+    assert response.status_code == 401
+    assert response.headers["www-authenticate"] == "Basic"
+
+
+def test_get_foo_rejects_incorrect_password() -> None:
+    """GET /foo rejects an incorrect password."""
     response = asyncio.run(_get_foo(httpx.BasicAuth("test", "incorrect")))
 
     assert response.status_code == 401
